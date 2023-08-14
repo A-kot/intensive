@@ -6,7 +6,7 @@ for i in range(len(str)):
         if str[i] in ('(', '[', '{'):
             s.append(str[i])
         else:
-            if i == 0:
+            if len(s) == 0:
                 print('False')
                 break
             if str[i] == ')' and s[-1] == '(':
