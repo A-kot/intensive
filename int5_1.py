@@ -10,7 +10,6 @@ def func(queue, visited):
         if queue[0] is not None:
             visited.add(queue[0].value)
             print(queue[0].value)
-        if queue[0]:
             queue.append(queue[0].left)
             queue.append(queue[0].right)
             queue = queue[1:]
