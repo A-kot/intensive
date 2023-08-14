@@ -17,4 +17,7 @@ for ch in str:
             break
 
 else:
-    print('True')
+    if s:
+        print('False')
+    else:
+        print('True')
