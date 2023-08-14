@@ -1,20 +1,23 @@
-str = '[][][]()(){(([(])))}'
+str = '((('
 s = []
 fl = True
 
-for ch in str:
-    if ch in ('(', '[', '{'):
-        s.append(ch)
-    else:
-        if ch == ')' and s[-1] == '(':
-            s.pop()
-        elif ch == ']' and s[-1] == '[':
-            s.pop()
-        elif ch == '}' and s[-1] == '{':
-            s.pop()
+for i in range(len(str)):
+        if str[i] in ('(', '[', '{'):
+            s.append(str[i])
         else:
-            print('False')
-            break
+            if i == 0:
+                print('False')
+                break
+            if str[i] == ')' and s[-1] == '(':
+                s.pop()
+            elif str[i] == ']' and s[-1] == '[':
+                s.pop()
+            elif str[i] == '}' and s[-1] == '{':
+                s.pop()
+            else:
+                print('False')
+                break
 
 else:
     if s:
