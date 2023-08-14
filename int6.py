@@ -3,18 +3,18 @@ s = []
 fl = True
 
 for ch in str:
-        if ch in ('(', '[', '{'):
-            s.append(ch)
+    if ch in ('(', '[', '{'):
+        s.append(ch)
+    else:
+        if ch == ')' and s[-1] == '(':
+            s.pop()
+        elif ch == ']' and s[-1] == '[':
+            s.pop()
+        elif ch == '}' and s[-1] == '{':
+            s.pop()
         else:
-            if ch == ')' and s[-1] == '(':
-                s.pop()
-            elif ch == ']' and s[-1] == '[':
-                s.pop()
-            elif ch == '}' and s[-1] == '{':
-                s.pop()
-            else:
-                print('False')
-                break
+            print('False')
+            break
 
 else:
     print('True')
